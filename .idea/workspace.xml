@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a043257-bfd3-4e54-ab59-c809c437fe57" name="Default Changelist" comment="feat : setting multiple project">
+    <list default="true" id="3a043257-bfd3-4e54-ab59-c809c437fe57" name="Default Changelist" comment="feat : study multi advisor&#10;&#10;target에 여러 aop가 적용될 때 여러 proxy가 생성되는 것이아니라 하나의 proxy에 여러 advisor가 붙는 것이다.">
+      <change afterPath="$PROJECT_DIR$/proxy/src/main/java/hello/proxy/config/v3_proxyfactory/ProxyFactoryConfigV1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/src/main/java/hello/proxy/config/v3_proxyfactory/ProxyFactoryConfigV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/src/main/java/hello/proxy/config/v3_proxyfactory/advice/LogTraceAdvice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/hello/proxy/ProxyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/hello/proxy/ProxyApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +37,28 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="235VWyB0xZ3IcpwSOA2MjYK8lTp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -54,7 +76,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.11890608" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunDashboard">
@@ -64,7 +86,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.proxyFactoryTest.interfaceProxy">
+  <component name="RunManager" selected="Spring Boot.ProxyApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -75,69 +97,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="HelloTraceV2Test.begin_end" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/advanced" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;hello.advanced.trace.hellotrace.HelloTraceV2Test.begin_end&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ProxyPatternTest.noProxyTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/proxy" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;hello.proxy.pureproxy.proxy.ProxyPatternTest.noProxyTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ReflectionTest.reflection2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/proxy" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;hello.proxy.jdkdynamic.ReflectionTest.reflection2&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
     </configuration>
     <configuration name="proxy" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
       <ExternalSystemSettings>
@@ -158,38 +117,80 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="proxyFactoryTest.interfaceProxy" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/proxy" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;hello.proxy.proxyfactory.proxyFactoryTest.interfaceProxy&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" value="-Dfile.encoding=UTF-8" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="proxyFactoryTest.interfaceProxy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdvisorTest.advisorTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proxy.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="hello.proxy.proxyfactory.*" />
+          <option name="PATTERN" value="hello.proxy.advisor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="hello.proxy.proxyfactory" />
-      <option name="MAIN_CLASS_NAME" value="hello.proxy.proxyfactory.proxyFactoryTest" />
-      <option name="METHOD_NAME" value="interfaceProxy" />
+      <option name="PACKAGE_NAME" value="hello.proxy.advisor" />
+      <option name="MAIN_CLASS_NAME" value="hello.proxy.advisor.AdvisorTest" />
+      <option name="METHOD_NAME" value="advisorTest1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdvisorTest.advisorTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proxy.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.proxy.advisor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.proxy.advisor" />
+      <option name="MAIN_CLASS_NAME" value="hello.proxy.advisor.AdvisorTest" />
+      <option name="METHOD_NAME" value="advisorTest2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdvisorTest.advisorTest3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proxy.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.proxy.advisor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.proxy.advisor" />
+      <option name="MAIN_CLASS_NAME" value="hello.proxy.advisor.AdvisorTest" />
+      <option name="METHOD_NAME" value="advisorTest3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultiAdvisorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proxy.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.proxy.advisor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.proxy.advisor" />
+      <option name="MAIN_CLASS_NAME" value="hello.proxy.advisor.MultiAdvisorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultiAdvisorTest.multiAdvisorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proxy.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.proxy.advisor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.proxy.advisor" />
+      <option name="MAIN_CLASS_NAME" value="hello.proxy.advisor.MultiAdvisorTest" />
+      <option name="METHOD_NAME" value="multiAdvisorTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -222,22 +223,22 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.proxy" />
-      <item itemvalue="Gradle.HelloTraceV2Test.begin_end" />
-      <item itemvalue="Gradle.proxyFactoryTest.interfaceProxy" />
-      <item itemvalue="Gradle.ProxyPatternTest.noProxyTest" />
-      <item itemvalue="Gradle.ReflectionTest.reflection2" />
       <item itemvalue="Spring Boot.AdvancedApplication" />
       <item itemvalue="Spring Boot.AopApplication" />
       <item itemvalue="Spring Boot.ProxyApplication" />
-      <item itemvalue="JUnit.proxyFactoryTest.interfaceProxy" />
+      <item itemvalue="JUnit.AdvisorTest.advisorTest1" />
+      <item itemvalue="JUnit.AdvisorTest.advisorTest2" />
+      <item itemvalue="JUnit.AdvisorTest.advisorTest3" />
+      <item itemvalue="JUnit.MultiAdvisorTest.multiAdvisorTest" />
+      <item itemvalue="JUnit.MultiAdvisorTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.proxyFactoryTest.interfaceProxy" />
-        <item itemvalue="Gradle.proxyFactoryTest.interfaceProxy" />
-        <item itemvalue="Gradle.HelloTraceV2Test.begin_end" />
-        <item itemvalue="Gradle.ProxyPatternTest.noProxyTest" />
-        <item itemvalue="Gradle.ReflectionTest.reflection2" />
+        <item itemvalue="JUnit.MultiAdvisorTest" />
+        <item itemvalue="JUnit.MultiAdvisorTest.multiAdvisorTest" />
+        <item itemvalue="JUnit.AdvisorTest.advisorTest3" />
+        <item itemvalue="JUnit.AdvisorTest.advisorTest2" />
+        <item itemvalue="JUnit.AdvisorTest.advisorTest1" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +252,7 @@
       <updated>1641023974486</updated>
       <workItem from="1641023978639" duration="1303000" />
       <workItem from="1641025331604" duration="126000" />
-      <workItem from="1641025484955" duration="903000" />
+      <workItem from="1641025484955" duration="5839000" />
     </task>
     <task id="LOCAL-00001" summary="feat : setting multiple project">
       <created>1641026269946</created>
@@ -260,7 +261,42 @@
       <option name="project" value="LOCAL" />
       <updated>1641026269946</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chore : setting idea">
+      <created>1641026450562</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1641026450562</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat : study proxy factory to test code">
+      <created>1641026944493</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1641026944493</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat : study proxy factory to test code">
+      <created>1641027752625</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1641027752625</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat : study advisor &amp; pointcut(what I realized, spring pointcut)">
+      <created>1641029463697</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1641029463697</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat : study multi advisor&#10;&#10;target에 여러 aop가 적용될 때 여러 proxy가 생성되는 것이아니라 하나의 proxy에 여러 advisor가 붙는 것이다.">
+      <created>1641030423982</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1641030423982</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +316,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat : setting multiple project" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : setting multiple project" />
+    <MESSAGE value="chore : setting idea" />
+    <MESSAGE value="feat : study proxy factory to test code" />
+    <MESSAGE value="feat : study advisor &amp; pointcut(what I realized, spring pointcut)" />
+    <MESSAGE value="feat : study multi advisor&#10;&#10;target에 여러 aop가 적용될 때 여러 proxy가 생성되는 것이아니라 하나의 proxy에 여러 advisor가 붙는 것이다." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : study multi advisor&#10;&#10;target에 여러 aop가 적용될 때 여러 proxy가 생성되는 것이아니라 하나의 proxy에 여러 advisor가 붙는 것이다." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
