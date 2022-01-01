@@ -4,9 +4,13 @@ import hello.proxy.common.advice.TimeAdvice;
 import hello.proxy.common.service.ServiceImpl;
 import hello.proxy.common.service.ServiceInterface;
 import lombok.extern.slf4j.Slf4j;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.aop.support.AopUtils;
+
+import static org.assertj.core.api.Assertions.*;
 
 @Slf4j
 public class proxyFactoryTest {
@@ -23,5 +27,16 @@ public class proxyFactoryTest {
 
         log.info("targetClass={}", target.getClass());
         log.info("proxyClass={}", proxy.getClass());
+
+        proxy.save();
+
+        /**
+         * proxyFactory로 만든 service proxy는 interface가 있으므로
+         * CGLIB가 아닌 jdkDynamic proxy로 만든 것
+         * 결과는 아래의 테스트에서 확인가능
+         */
+        assertThat(AopUtils.isAopProxy(proxy)).isTrue();
+        assertThat(AopUtils.isJdkDynamicProxy(proxy)).isTrue();
+        assertThat(AopUtils.isCglibProxy(proxy)).isFalse();
     }
 }
