@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a043257-bfd3-4e54-ab59-c809c437fe57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/실전 프로젝트.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/spring-core-study.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/test/java/hello/proxy/proxyfactory/proxyFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/test/java/hello/proxy/proxyfactory/proxyFactoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/test/java/hello/proxy/pureproxy/proxy/ProxyPatternTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/test/java/hello/proxy/pureproxy/proxy/ProxyPatternTest.java" afterDir="false" />
+    <list default="true" id="3a043257-bfd3-4e54-ab59-c809c437fe57" name="Default Changelist" comment="feat : setting multiple project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,8 +251,16 @@
       <updated>1641023974486</updated>
       <workItem from="1641023978639" duration="1303000" />
       <workItem from="1641025331604" duration="126000" />
-      <workItem from="1641025484955" duration="670000" />
+      <workItem from="1641025484955" duration="903000" />
     </task>
+    <task id="LOCAL-00001" summary="feat : setting multiple project">
+      <created>1641026269946</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1641026269946</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +277,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat : setting multiple project" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : setting multiple project" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
