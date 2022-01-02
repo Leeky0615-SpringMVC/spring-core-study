@@ -1,11 +1,11 @@
-package hello.proxy.config.v2_config;
+package hello.proxy.config.v1_proxy;
 
 import hello.proxy.app.v2.OrderControllerV2;
 import hello.proxy.app.v2.OrderRepositoryV2;
 import hello.proxy.app.v2.OrderServiceV2;
-import hello.proxy.config.v2_config.concreteProxy.OrderControllerConcreteProxy;
-import hello.proxy.config.v2_config.concreteProxy.OrderRepositoryConcreteProxy;
-import hello.proxy.config.v2_config.concreteProxy.OrderServiceConcreteProxy;
+import hello.proxy.config.v1_proxy.concreteproxy.OrderControllerConcreteProxy;
+import hello.proxy.config.v1_proxy.concreteproxy.OrderRepositoryConcreteProxy;
+import hello.proxy.config.v1_proxy.concreteproxy.OrderServiceConcreteProxy;
 import hello.proxy.trace.logtrace.LogTrace;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

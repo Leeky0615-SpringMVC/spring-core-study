@@ -1,14 +1,19 @@
-package hello.proxy.config.v1_config.interface_proxy;
+package hello.proxy.config.v1_proxy.concreteproxy;
 
-import hello.proxy.app.v1.OrderServiceV1;
+import hello.proxy.app.v2.OrderServiceV2;
 import hello.proxy.trace.TraceStatus;
 import hello.proxy.trace.logtrace.LogTrace;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
-public class OrderServiceInterfaceProxy implements OrderServiceV1 {
-    private final OrderServiceV1 target;
+public class OrderServiceConcreteProxy extends OrderServiceV2 {
+
+    private final OrderServiceV2 target;
     private final LogTrace logTrace;
+
+    public OrderServiceConcreteProxy(OrderServiceV2 target, LogTrace logTrace) {
+        super(null); // 위의 기능을 안쓰고 프록시만 쓸거기때문
+        this.target = target;
+        this.logTrace = logTrace;
+    }
 
     @Override
     public void orderItem(String itemId) {

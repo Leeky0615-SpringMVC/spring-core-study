@@ -1,4 +1,4 @@
-package hello.proxy.config.v2_config.concreteProxy;
+package hello.proxy.config.v1_proxy.concreteproxy;
 
 import hello.proxy.app.v2.OrderRepositoryV2;
 import hello.proxy.trace.TraceStatus;
