@@ -44,7 +44,7 @@ public class AspectV6Advice {
 
     @AfterThrowing(value = "hello.aop.order.aop.PointCuts.orderAndService()", throwing = "ex")
     public void doThrowing(JoinPoint joinPoint, Exception ex) {
-        log.info("[ex] {} message={}", joinPoint.getSignature(), ex);
+        log.info("[ex] {} message={}", joinPoint.getSignature(), ex.getMessage());
     }
 
     @After(value = "hello.aop.order.aop.PointCuts.orderAndService()")
@@ -52,3 +52,4 @@ public class AspectV6Advice {
         log.info("[after] {}", joinPoint.getSignature());
     }
 }
+
