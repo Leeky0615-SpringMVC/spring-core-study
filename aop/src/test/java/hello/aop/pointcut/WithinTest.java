@@ -1,6 +1,6 @@
 package hello.aop.pointcut;
 
-import hello.aop.member.MemberServiceImpl;
+import hello.aop.member.annotation.MemberServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,7 +21,7 @@ public class WithinTest {
 
     @Test
     void withinExact() {
-        pointcut.setExpression("within(hello.aop.member.MemberServiceImpl)");
+        pointcut.setExpression("within(hello.aop.member.annotation.MemberServiceImpl)");
         assertThat(pointcut.matches(helloMethod,
                 MemberServiceImpl.class)).isTrue();
     }
@@ -43,14 +43,14 @@ public class WithinTest {
     @Test
     @DisplayName("타겟의 타입에만 직접 적용, 인터페이스를 선정하면 안된다.")
     void withinSuperTypeFalse() {
-        pointcut.setExpression("within(hello.aop.member.MemberService)");
+        pointcut.setExpression("within(hello.aop.member.annotation.MemberService)");
         assertThat(pointcut.matches(helloMethod,MemberServiceImpl.class)).isFalse();
     }
 
     @Test
     @DisplayName("execution은 타입 기반, 인터페이스 선정 가능")
     void executionSuperTypeFalse() {
-        pointcut.setExpression("execution(* hello.aop.member.MemberService.*(..))");
+        pointcut.setExpression("execution(* hello.aop.member.annotation.MemberService.*(..))");
         assertThat(pointcut.matches(helloMethod,MemberServiceImpl.class)).isTrue();
     }
 }
