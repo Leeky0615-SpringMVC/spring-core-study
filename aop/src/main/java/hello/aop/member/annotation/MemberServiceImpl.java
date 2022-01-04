@@ -1,4 +1,4 @@
-package hello.aop.member;
+package hello.aop.member.annotation;
 
 import org.springframework.stereotype.Component;
 
