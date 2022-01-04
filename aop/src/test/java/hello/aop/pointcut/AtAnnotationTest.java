@@ -8,7 +8,6 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 
@@ -22,7 +21,7 @@ public class AtAnnotationTest {
 
     @Test
     void success() {
-        log.info("memberService Proxy={}", memberService, getClass());
+        log.info("memberService Proxy={}", memberService.getClass());
         memberService.hello("helloA");
     }
 
