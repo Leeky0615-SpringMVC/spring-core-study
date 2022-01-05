@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a043257-bfd3-4e54-ab59-c809c437fe57" name="Default Changelist" comment="feat : study multi advisor&#10;&#10;target에 여러 aop가 적용될 때 여러 proxy가 생성되는 것이아니라 하나의 proxy에 여러 advisor가 붙는 것이다.">
-      <change afterPath="$PROJECT_DIR$/proxy/src/main/java/hello/proxy/config/v3_proxyfactory/ProxyFactoryConfigV1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/src/main/java/hello/proxy/config/v3_proxyfactory/ProxyFactoryConfigV2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/src/main/java/hello/proxy/config/v3_proxyfactory/advice/LogTraceAdvice.java" afterDir="false" />
+    <list default="true" id="3a043257-bfd3-4e54-ab59-c809c437fe57" name="Default Changelist" comment="feat : study problem that proxy &amp; DI on working-level&#10;&#10;의존성 주입을 할때 JDK 동적 프록시는 구체 클래스를 주입할 수 없다. 그래서 CGLIB를 사용해 인터페이스, 구체클래스 모두 주입 가능하도록 사용한다. CGLIB도 한계점이 있었으나 스프링 버전이 올라가면서 대부분 해결">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/hello/proxy/ProxyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/hello/proxy/ProxyApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +31,27 @@
         <task path="$PROJECT_DIR$/proxy">
           <activation />
         </task>
-        <projects_view />
+        <task path="$PROJECT_DIR$/aop">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -54,6 +66,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.3.10/a21abb5a4201af9b7879d30ca2743c6aab9f8da8/spring-aop-5.3.10-sources.jar!/org/springframework/aop/support/NameMatchMethodPointcut.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="235VWyB0xZ3IcpwSOA2MjYK8lTp" />
   <component name="ProjectLevelVcsManager">
@@ -72,12 +87,29 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../강의 소스코드/advanced/aop" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.11890608" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="hello.aop.internalcall" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="hello.aop.internalcall" />
+      <recent name="hello.aop.order.aop" />
+      <recent name="hello.proxy.config.v3_proxyfactory" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -86,7 +118,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProxyApplication">
+  <component name="RunManager" selected="JUnit.ProxyDITest.go">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -117,80 +149,79 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AdvisorTest.advisorTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proxy.test" />
+    <configuration name="CallServiceV3Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aop.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="hello.proxy.advisor.*" />
+          <option name="PATTERN" value="hello.aop.internalcall.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="hello.proxy.advisor" />
-      <option name="MAIN_CLASS_NAME" value="hello.proxy.advisor.AdvisorTest" />
-      <option name="METHOD_NAME" value="advisorTest1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AdvisorTest.advisorTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proxy.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hello.proxy.advisor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="hello.proxy.advisor" />
-      <option name="MAIN_CLASS_NAME" value="hello.proxy.advisor.AdvisorTest" />
-      <option name="METHOD_NAME" value="advisorTest2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AdvisorTest.advisorTest3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proxy.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hello.proxy.advisor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="hello.proxy.advisor" />
-      <option name="MAIN_CLASS_NAME" value="hello.proxy.advisor.AdvisorTest" />
-      <option name="METHOD_NAME" value="advisorTest3" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MultiAdvisorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proxy.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hello.proxy.advisor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="hello.proxy.advisor" />
-      <option name="MAIN_CLASS_NAME" value="hello.proxy.advisor.MultiAdvisorTest" />
+      <option name="PACKAGE_NAME" value="hello.aop.internalcall" />
+      <option name="MAIN_CLASS_NAME" value="hello.aop.internalcall.CallServiceV3Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiAdvisorTest.multiAdvisorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proxy.test" />
+    <configuration name="ProxyCastingTest.cglibProxy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aop.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="hello.proxy.advisor.*" />
+          <option name="PATTERN" value="hello.aop.proxyvs.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="hello.proxy.advisor" />
-      <option name="MAIN_CLASS_NAME" value="hello.proxy.advisor.MultiAdvisorTest" />
-      <option name="METHOD_NAME" value="multiAdvisorTest" />
+      <option name="PACKAGE_NAME" value="hello.aop.proxyvs" />
+      <option name="MAIN_CLASS_NAME" value="hello.aop.proxyvs.ProxyCastingTest" />
+      <option name="METHOD_NAME" value="cglibProxy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProxyCastingTest.jdkProxy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aop.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.aop.proxyvs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.aop.proxyvs" />
+      <option name="MAIN_CLASS_NAME" value="hello.aop.proxyvs.ProxyCastingTest" />
+      <option name="METHOD_NAME" value="jdkProxy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProxyDITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aop.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.aop.proxyvs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.aop.proxyvs" />
+      <option name="MAIN_CLASS_NAME" value="hello.aop.proxyvs.ProxyDITest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProxyDITest.go" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aop.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.aop.proxyvs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.aop.proxyvs" />
+      <option name="MAIN_CLASS_NAME" value="hello.aop.proxyvs.ProxyDITest" />
+      <option name="METHOD_NAME" value="go" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -201,13 +232,6 @@
       <option name="SPRING_BOOT_MAIN_CLASS" value="hello.advanced.AdvancedApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SHORTEN_COMMAND_LINE" value="NONE" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="aop.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="hello.aop.AopApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -224,21 +248,20 @@
     <list>
       <item itemvalue="Gradle.proxy" />
       <item itemvalue="Spring Boot.AdvancedApplication" />
-      <item itemvalue="Spring Boot.AopApplication" />
       <item itemvalue="Spring Boot.ProxyApplication" />
-      <item itemvalue="JUnit.AdvisorTest.advisorTest1" />
-      <item itemvalue="JUnit.AdvisorTest.advisorTest2" />
-      <item itemvalue="JUnit.AdvisorTest.advisorTest3" />
-      <item itemvalue="JUnit.MultiAdvisorTest.multiAdvisorTest" />
-      <item itemvalue="JUnit.MultiAdvisorTest" />
+      <item itemvalue="JUnit.CallServiceV3Test" />
+      <item itemvalue="JUnit.ProxyCastingTest.jdkProxy" />
+      <item itemvalue="JUnit.ProxyCastingTest.cglibProxy" />
+      <item itemvalue="JUnit.ProxyDITest" />
+      <item itemvalue="JUnit.ProxyDITest.go" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MultiAdvisorTest" />
-        <item itemvalue="JUnit.MultiAdvisorTest.multiAdvisorTest" />
-        <item itemvalue="JUnit.AdvisorTest.advisorTest3" />
-        <item itemvalue="JUnit.AdvisorTest.advisorTest2" />
-        <item itemvalue="JUnit.AdvisorTest.advisorTest1" />
+        <item itemvalue="JUnit.ProxyDITest.go" />
+        <item itemvalue="JUnit.ProxyDITest" />
+        <item itemvalue="JUnit.ProxyCastingTest.cglibProxy" />
+        <item itemvalue="JUnit.ProxyCastingTest.jdkProxy" />
+        <item itemvalue="JUnit.CallServiceV3Test" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +275,14 @@
       <updated>1641023974486</updated>
       <workItem from="1641023978639" duration="1303000" />
       <workItem from="1641025331604" duration="126000" />
-      <workItem from="1641025484955" duration="5839000" />
+      <workItem from="1641025484955" duration="6050000" />
+      <workItem from="1641100909179" duration="7130000" />
+      <workItem from="1641108414517" duration="1041000" />
+      <workItem from="1641109555468" duration="13191000" />
+      <workItem from="1641270209751" duration="2262000" />
+      <workItem from="1641272808019" duration="429000" />
+      <workItem from="1641273295094" duration="103000" />
+      <workItem from="1641273424926" duration="16784000" />
     </task>
     <task id="LOCAL-00001" summary="feat : setting multiple project">
       <created>1641026269946</created>
@@ -296,7 +326,287 @@
       <option name="project" value="LOCAL" />
       <updated>1641030423982</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat : study how to apply proxyFactory (V1::interface, V2::concrete)">
+      <created>1641031563368</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1641031563368</updated>
+    </task>
+    <task id="LOCAL-00008" summary="chore : add space">
+      <created>1641102526204</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1641102526204</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat : init study bean post processor">
+      <created>1641102569345</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1641102569346</updated>
+    </task>
+    <task id="LOCAL-00010" summary="chore : move package">
+      <created>1641103660993</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1641103660993</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat : test bean post processor operation">
+      <created>1641103752691</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1641103752691</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat : study how to apply bean post processor to V1(interface),V2(concrete),v3(component scan)">
+      <created>1641106159702</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1641106159702</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat : add aop dependency">
+      <created>1641106187064</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1641106187064</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat : study how to apply auto proxy that spring provide">
+      <created>1641107220842</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1641107220842</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat : study how to apply auto proxy with AspectJExpressionPointcut that spring provide&#10;&#10;스프링에서 제공하는 빈 후처리기는 등록된 모든 빈을 탐색하기 때문에 스프링에서 등록한 빈들 중 기존 포인트컷에 설정된 &quot;request*&quot; 와 같은 이름을 가지는 모든 메서드에 프록시를 생성한다. 그래서 AspectJExpressionPointcut 에서 제공하는 표현식을 사용해 포인트컷을 추가해 원하는 패키지, 클래스, 메서드에만 프록시를 생성할 수 있도록 한다.">
+      <created>1641107753683</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1641107753683</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat : study how to apply auto proxy with AspectJExpressionPointcut that spring provide">
+      <created>1641111408164</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1641111408164</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat : study how to apply auto proxy with Annotation(@Aspect, @Around)&#10;&#10;@Aspect 어노테이션이 있는 클래스에서 @Around([pointcut expression])+메서드(어드바이스) 로 구성된 어노테이션을 어드바이저로 등록을 해준다.">
+      <created>1641113118687</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1641113118687</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat : add dependency (aop, lombok for test)">
+      <created>1641198488663</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1641198488663</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat : add order service &amp; repository for test code">
+      <created>1641198746502</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1641198746502</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat : study spring aop simple test">
+      <created>1641198915951</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1641198915951</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat : study Aspect-V1  (basic)">
+      <created>1641200096421</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1641200096421</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat : study Aspect-V2  (separate point cut)">
+      <created>1641200125209</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1641200125209</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat : study Aspect-V3  (transaction)">
+      <created>1641200159074</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1641200159074</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat : study Aspect-V4  (refer to external pointcut)">
+      <created>1641200758776</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1641200758776</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat : study Aspect-V5  (order by)">
+      <created>1641201069805</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1641201069805</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat : study Aspect-V5  (order by)">
+      <created>1641201083261</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1641201083261</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat : study Aspect-V6  (another annotations)">
+      <created>1641201944422</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1641201944422</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat : study aspect with test">
+      <created>1641202000801</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1641202000801</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat : study aspect-V6 (other annotations)">
+      <created>1641202594718</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1641202594718</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat : study pointcut designator(execution, within, args)">
+      <created>1641277640950</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1641277640950</updated>
+    </task>
+    <task id="LOCAL-00031" summary="chore : move package to [annotation]">
+      <created>1641278494733</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1641278494733</updated>
+    </task>
+    <task id="LOCAL-00032" summary="chore : move package to [annotation]">
+      <created>1641278514333</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1641278514333</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat : study @target, @within&#10;&#10;@target -&gt; 부모 클래스까지 / @Within -&gt; 구체클래스만 가능&#10;args, @args, @target은 실제 객체 인스턴스가 생성되고 실행될 때 어드바이스 적용 여부를 확인할 수 있어서 단독으로 사용하면 안된다. execution으로 먼저 적용 대상을 줄이고 시작하자.">
+      <created>1641278676673</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1641278676673</updated>
+    </task>
+    <task id="LOCAL-00034" summary="chore : move package MemberService, MemberServiceImpl">
+      <created>1641278786572</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1641278786572</updated>
+    </task>
+    <task id="LOCAL-00035" summary="feat : study pointcut designator(@annotation)">
+      <created>1641279169804</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1641279169804</updated>
+    </task>
+    <task id="LOCAL-00036" summary="feat : study pointcut designator(@annotation)">
+      <created>1641279206416</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1641279206416</updated>
+    </task>
+    <task id="LOCAL-00037" summary="feat : study pointcut designator(bean)&#10;&#10;bean에 등록된 이름을 가지고 pointcut을 적용한다.">
+      <created>1641279437121</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1641279437121</updated>
+    </task>
+    <task id="LOCAL-00038" summary="feat : study pointcut designator(parameter)&#10;&#10;this -&gt; 프록시 전달 / target -&gt; 실제 대상 전달&#10;@target,@within -&gt; 타입의 annotation&#10;@annotation -&gt; 메서드의 annotation">
+      <created>1641280466805</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1641280466805</updated>
+    </task>
+    <task id="LOCAL-00039" summary="feat : study pointcut designator(this, target)">
+      <created>1641283804706</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1641283804706</updated>
+    </task>
+    <task id="LOCAL-00040" summary="feat : learn how to use proxy on working-level(retry)">
+      <created>1641285302874</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1641285302874</updated>
+    </task>
+    <task id="LOCAL-00041" summary="feat : study problem that proxy &amp; internal call on working-level">
+      <created>1641358313679</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1641358313679</updated>
+    </task>
+    <task id="LOCAL-00042" summary="feat : solution 1(self injection) -&gt; proxy &amp; internal call problem on working-level&#10;&#10;스프링 2.6.x 버전 부터는 자기 자신 주입을 set에 autowired를 해도 순환참조 exception이 발생한다. (application.properties에 allow-circular-references=true 옵션을 주어 해결)">
+      <created>1641358554425</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1641358554425</updated>
+    </task>
+    <task id="LOCAL-00043" summary="feat : solution 2(lazy inquiry) -&gt; proxy &amp; internal call problem on working-level&#10;&#10;applicationContext나 ObjectProvider를 통해 자기 자신을 조회한다. 이때, applicationContext는 단순히 클래스하나만 뽑으려고 사용하기에는 너무 광범위한 기능을 제공하기 때문에 클래스의 목적이 분명한 ObjectProvider를 통해 뽑는 것이 나아보인다.">
+      <created>1641359052829</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1641359052829</updated>
+    </task>
+    <task id="LOCAL-00044" summary="feat : better solution 3(separate structure) -&gt; proxy &amp; internal call problem on working-level&#10;&#10;가장 나은 방법은 내부 호출되는 메서드를 분리해 구조를 변경하는 것이다.">
+      <created>1641359415658</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1641359415659</updated>
+    </task>
+    <task id="LOCAL-00045" summary="feat : study problem that proxy &amp; type casting on working-level&#10;&#10;JDK 동적 프록시는 구체클래스로 타입 캐스팅 불가. 인터페이스를 기반으로 프록시를 생성하기 떄문">
+      <created>1641360401455</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1641360401455</updated>
+    </task>
+    <task id="LOCAL-00046" summary="feat : study problem that proxy &amp; DI on working-level&#10;&#10;의존성 주입을 할때 JDK 동적 프록시는 구체 클래스를 주입할 수 없다. 그래서 CGLIB를 사용해 인터페이스, 구체클래스 모두 주입 가능하도록 사용한다. CGLIB도 한계점이 있었으나 스프링 버전이 올라가면서 대부분 해결">
+      <created>1641362181619</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1641362181619</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,12 +625,32 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat : setting multiple project" />
-    <MESSAGE value="chore : setting idea" />
-    <MESSAGE value="feat : study proxy factory to test code" />
-    <MESSAGE value="feat : study advisor &amp; pointcut(what I realized, spring pointcut)" />
-    <MESSAGE value="feat : study multi advisor&#10;&#10;target에 여러 aop가 적용될 때 여러 proxy가 생성되는 것이아니라 하나의 proxy에 여러 advisor가 붙는 것이다." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : study multi advisor&#10;&#10;target에 여러 aop가 적용될 때 여러 proxy가 생성되는 것이아니라 하나의 proxy에 여러 advisor가 붙는 것이다." />
+    <MESSAGE value="feat : add order service &amp; repository for test code" />
+    <MESSAGE value="feat : study spring aop simple test" />
+    <MESSAGE value="feat : study Aspect-V1  (basic)" />
+    <MESSAGE value="feat : study Aspect-V2  (separate point cut)" />
+    <MESSAGE value="feat : study Aspect-V3  (transaction)" />
+    <MESSAGE value="feat : study Aspect-V4  (refer to external pointcut)" />
+    <MESSAGE value="feat : study Aspect-V5  (order by)" />
+    <MESSAGE value="feat : study Aspect-V6  (another annotations)" />
+    <MESSAGE value="feat : study aspect with test" />
+    <MESSAGE value="feat : study aspect-V6 (other annotations)" />
+    <MESSAGE value="feat : study pointcut designator(execution, within, args)" />
+    <MESSAGE value="chore : move package to [annotation]" />
+    <MESSAGE value="feat : study @target, @within&#10;&#10;@target -&gt; 부모 클래스까지 / @Within -&gt; 구체클래스만 가능&#10;args, @args, @target은 실제 객체 인스턴스가 생성되고 실행될 때 어드바이스 적용 여부를 확인할 수 있어서 단독으로 사용하면 안된다. execution으로 먼저 적용 대상을 줄이고 시작하자." />
+    <MESSAGE value="chore : move package MemberService, MemberServiceImpl" />
+    <MESSAGE value="feat : study pointcut designator(@annotation)" />
+    <MESSAGE value="feat : study pointcut designator(bean)&#10;&#10;bean에 등록된 이름을 가지고 pointcut을 적용한다." />
+    <MESSAGE value="feat : study pointcut designator(parameter)&#10;&#10;this -&gt; 프록시 전달 / target -&gt; 실제 대상 전달&#10;@target,@within -&gt; 타입의 annotation&#10;@annotation -&gt; 메서드의 annotation" />
+    <MESSAGE value="feat : study pointcut designator(this, target)" />
+    <MESSAGE value="feat : learn how to use proxy on working-level(retry)" />
+    <MESSAGE value="feat : study problem that proxy &amp; internal call on working-level" />
+    <MESSAGE value="feat : solution 1(self injection) -&gt; proxy &amp; internal call problem on working-level&#10;&#10;스프링 2.6.x 버전 부터는 자기 자신 주입을 set에 autowired를 해도 순환참조 exception이 발생한다. (application.properties에 allow-circular-references=true 옵션을 주어 해결)" />
+    <MESSAGE value="feat : solution 2(lazy inquiry) -&gt; proxy &amp; internal call problem on working-level&#10;&#10;applicationContext나 ObjectProvider를 통해 자기 자신을 조회한다. 이때, applicationContext는 단순히 클래스하나만 뽑으려고 사용하기에는 너무 광범위한 기능을 제공하기 때문에 클래스의 목적이 분명한 ObjectProvider를 통해 뽑는 것이 나아보인다." />
+    <MESSAGE value="feat : better solution 3(separate structure) -&gt; proxy &amp; internal call problem on working-level&#10;&#10;가장 나은 방법은 내부 호출되는 메서드를 분리해 구조를 변경하는 것이다." />
+    <MESSAGE value="feat : study problem that proxy &amp; type casting on working-level&#10;&#10;JDK 동적 프록시는 구체클래스로 타입 캐스팅 불가. 인터페이스를 기반으로 프록시를 생성하기 떄문" />
+    <MESSAGE value="feat : study problem that proxy &amp; DI on working-level&#10;&#10;의존성 주입을 할때 JDK 동적 프록시는 구체 클래스를 주입할 수 없다. 그래서 CGLIB를 사용해 인터페이스, 구체클래스 모두 주입 가능하도록 사용한다. CGLIB도 한계점이 있었으나 스프링 버전이 올라가면서 대부분 해결" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : study problem that proxy &amp; DI on working-level&#10;&#10;의존성 주입을 할때 JDK 동적 프록시는 구체 클래스를 주입할 수 없다. 그래서 CGLIB를 사용해 인터페이스, 구체클래스 모두 주입 가능하도록 사용한다. CGLIB도 한계점이 있었으나 스프링 버전이 올라가면서 대부분 해결" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
